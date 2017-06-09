@@ -258,6 +258,8 @@ export default class BodymenSchema {
     } else if (_.isObject(options)) {
       if (!_.isFunction(options.type)) {
         options.type = Object
+      } else if (options.type && options.type.schemaName === 'ObjectId') {
+        options.type = Object
       }
     }
 
